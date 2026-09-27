@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!-- 虚构脱敏示例：模拟"旧人事系统"的网页导出（扩展名是 .xls，内容其实是 HTML 表格）。
+     本 Skill 按内容嗅探格式，会把它认成 html 而不是真·二进制 .xls。 -->
+<html>
+<head>
+<meta charset="utf-8">
+<title>员工花名册</title>
+<style>td,th{border:1px solid #999;padding:2px}</style>
+</head>
+<body>
+<p>导出时间：2024-07-10（演示数据，与真实个人无关）</p>
+<table border="1" cellspacing="0">
+<tr><th>姓名</th><th>手机</th><th>入职日期</th><th>来源系统</th></tr>
+<tr><td>张三</td><td>13800000001</td><td>2024-03-01</td><td>人事库</td></tr>
+<tr><td> 李四 </td><td>13800000002</td><td>2024-03-05</td><td>人事库</td></tr>
+<tr><td>王　五</td><td>13800000003</td><td>2024-04-01</td><td>人事库</td></tr>
+<tr><td>赵六</td><td></td><td>2024-03-15</td><td>人事库</td></tr>
+<tr><td>孙八</td><td>13800000008</td><td>2024-05-01</td><td>人事库</td></tr>
+<tr><td>吴十</td><td>13800000010</td><td>2024-06-01</td><td>人事库</td></tr>
+<tr><td>郑十一</td><td>13800000011</td><td>2024-06-01</td><td>人事库</td></tr>
+<tr><td>冯十三</td><td>13800000013</td><td>2024-07-01</td><td>人事库</td></tr>
+</table>
+<script>/* 真实系统导出常带脚本，本 Skill 会忽略 script/style 里的内容 */</script>
+</body>
+</html>

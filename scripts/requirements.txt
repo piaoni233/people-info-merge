@@ -1,0 +1,19 @@
+# 第三方依赖（可选依赖请在此登记名称、版本与许可证）
+
+本 Skill 的合并引擎默认 **零第三方依赖**：仅使用 Python 3.9+ 标准库
+（argparse / csv / json / re / difflib / unicodedata / zipfile /
+xml.etree / unittest / datetime）。
+
+可选依赖（非必需、未捆绑、无则自动回退标准库后端）：
+
+- openpyxl >= 3.1.0 ｜ 来源 PyPI ｜ 许可证 MIT ｜ 可商用 ｜
+  授权文件：https://openpyxl.readthedocs.io/en/stable/ ｜
+  用途：.xlsx 读写加速/兜底 ｜ 不传输任何数据、不调用外部 API/模型
+
+- xlrd >= 2.0.1 ｜ 来源 PyPI ｜ 许可证 BSD ｜ 可商用 ｜
+  授权文件：https://xlrd.readthedocs.io/en/latest/ ｜
+  用途：**仅**读取旧版二进制 .xls（BIFF/OLE；xlrd 2.x 已不再读取 .xlsx）｜
+  不传输任何数据、不调用外部 API/模型；未安装时对旧版 .xls 给出“另存为 .xlsx / pip install xlrd”指引
+
+说明：`html.parser`、`zipfile`、`xml.etree`、`unicodedata` 等均为 Python 标准库（PSF License 2.0），
+非第三方依赖；.ods / HTML 表格 / Excel 2003 XML / CSV·TSV 的解析全部由标准库完成。
