@@ -1,4 +1,4 @@
-# 多表人员信息汇总助手（People Info Merg）
+# 多表人员信息汇总助手（People Info Merge）
 
 ![Python Version](https://img.shields.io/badge/python-3.9%2B-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
@@ -61,6 +61,7 @@
 多表人员信息汇总助手/
 ├── SKILL.md                     # Skill 入口元数据契约（面向平台与 Agent 执行指引）
 ├── README.md                    # 本文档（面向开发者与审核方：设计思路与工程说明）
+├── CONTRIBUTING.md              # 参与贡献指南（问题反馈与 PR 流程）
 ├── LICENSE                      # MIT 开源许可证
 ├── .gitignore                   # 排除临时产物、运行输出与敏感缓存
 ├── scripts/
@@ -79,6 +80,9 @@
 │   ├── test_cases.md            # 回归测试用例集（T1–T18 完整矩阵）
 │   ├── limitations.md           # 风险边界与设计上限说明
 │   └── changelog.md             # 版本变更记录
+├── docs/                        # 技术选型与架构文档
+│   ├── TECH-STACK.md            # 技术选型与取舍
+│   └── ARCHITECTURE.md          # 架构、数据流与输出契约
 ├── examples/sample_data/        # 虚构脱敏多源测试样本（化名与 138000000xx 号段）
 │   ├── README.md                # 样本数据集说明
 │   ├── 招聘系统导出.csv          # 招聘源（姓名 + 手机，常规 CSV）
@@ -93,6 +97,11 @@
 ---
 
 ## 四、快速开始
+
+### 环境要求
+
+- Python 3.9+，无需安装任何必需依赖（核心引擎只用标准库），解压/克隆后直接运行。
+- 可选依赖（未安装时自动回退标准库后端）：`openpyxl >= 3.1.0`（.xlsx 读写加速）、`xlrd >= 2.0.1`（旧版二进制 .xls 读取）。详见 [scripts/requirements.txt](scripts/requirements.txt)。
 
 ### 经典三步调用流程
 
@@ -169,3 +178,12 @@ python scripts/package_skill.py --out 多表人员信息汇总助手.zip
 - **许可证**：[MIT License](LICENSE)
 - **作者**：`ymyh`
 - **版本**：`1.0.0`
+
+---
+
+## 八、参与贡献与相关文档
+
+- **参与贡献**：欢迎提 Issue 与 PR，流程与规范见 [CONTRIBUTING.md](CONTRIBUTING.md)（提交前请跑通 `selfcheck`、`selftest` 与全量单元测试）。
+- **技术选型**：[docs/TECH-STACK.md](docs/TECH-STACK.md)（为什么选标准库优先、为什么不用 Pandas、可选依赖的取舍）。
+- **架构说明**：[docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)（五子命令的数据流、关联键归一化、三 Sheet 输出契约、安全设计）。
+- **详细参考**：[references/usage.md](references/usage.md)（完整命令参数）、[references/output_format.md](references/output_format.md)（输出契约）、[references/format_matrix.md](references/format_matrix.md)（格式解析矩阵）、[references/troubleshooting.md](references/troubleshooting.md)（排障速查）、[references/limitations.md](references/limitations.md)（风险边界）、[references/changelog.md](references/changelog.md)（版本变更记录）。
